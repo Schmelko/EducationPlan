@@ -21,4 +21,6 @@ class EducationPlan:
         return sum(entry.hours_per_week for entry in self._entries if entry.teacher_name == teacher_name)
 
     def head_teacher_by_class(self, class_name):
-        return tuple(entry.teacher_name for entry in self._entries if entry.class_name == class_name and entry.subject == 'osztalyfonoki')[0]
+        for entry in self._entries:
+            if entry.class_name == class_name and entry.subject == 'osztalyfonoki':
+                return entry.teacher_name
