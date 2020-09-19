@@ -13,3 +13,9 @@ class EducationPlan:
     
     def number_of_entries(self):
         return len(self._entries)
+    
+    def number_of_lessons_per_week(self):
+        return sum(entry.hours_per_week for entry in self._entries)
+
+    def number_of_lessons_per_week_by_teacher(self, teacher_name):
+        return sum(entry.hours_per_week for entry in self._entries if entry.teacher_name == teacher_name)

@@ -25,5 +25,11 @@ class TestsForEducationPlan(unittest.TestCase):
         result = self.education_plan.number_of_lessons_per_week()
         self.assertEqual(expected, result)
 
+    def test_task4(self):
+        teacher_name = 'Albatrosz Aladin'
+        expected = 24
+        result = self.education_plan.number_of_lessons_per_week_by_teacher(teacher_name)
+        self.assertEqual(expected, result)
+
 if __name__ == '__main__':
     unittest.main()
