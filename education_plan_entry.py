@@ -3,4 +3,4 @@ class EducationPlanEntry:
         self.teacher_name = teacher_name
         self.subject = subject
         self.class_name = class_name
-        self.hours_per_week = hours_per_week
+        self.hours_per_week = int(hours_per_week)
