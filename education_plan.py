@@ -27,3 +27,7 @@ class EducationPlan:
 
     def is_subject_learnt_in_groups(self, class_name, subject):
         return len(tuple(entry for entry in self._entries if entry.class_name == class_name and entry.subject == subject)) > 1
+
+    def number_of_teachers(self):
+        return len(set(entry.teacher_name for entry in self._entries))
+         

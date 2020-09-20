@@ -49,5 +49,10 @@ class TestsForEducationPlan(unittest.TestCase):
         self.assertTrue(results[0])
         self.assertFalse(results[1])
 
+    def test_task7(self):
+        expected = 49
+        result = self.education_plan.number_of_teachers()
+        self.assertEqual(expected, result)
+
 if __name__ == '__main__':
    unittest.main()
