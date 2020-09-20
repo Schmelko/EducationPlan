@@ -26,8 +26,4 @@ class EducationPlan:
                 return entry.teacher_name
 
     def is_subject_learnt_in_groups(self, class_name, subject):
-        entries = tuple(entry for entry in self._entries if entry.class_name == class_name and entry.subject == subject)
-        if len(entries) > 1:
-            return True
-        else:
-            return False
+        return len(entry for entry in self._entries if entry.class_name == class_name and entry.subject == subject) > 1
