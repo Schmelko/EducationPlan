@@ -40,5 +40,14 @@ class TestsForEducationPlan(unittest.TestCase):
         results = {class_name:self.education_plan.head_teacher_by_class(class_name) for class_name in expected.keys()}
         self.assertDictEqual(expected, results)
 
+    def test_task6(self):
+        class_name = '10.b'
+        subjects = 'kemia', 'tortenelem'
+        results = (
+            self.education_plan.is_subject_learnt_in_groups(class_name, subjects[0]),
+            self.education_plan.is_subject_learnt_in_groups(class_name, subjects[1]))
+        self.assertTrue(results[0])
+        self.assertFalse(results[1])
+
 if __name__ == '__main__':
-    unittest.main()
+   unittest.main()
